@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Nhân Viên</title>
+    <link rel="stylesheet" href="employees.css">
+</head>
+<body>
+    <header>
+        <h1>Quản Lý Nhân Viên</h1>
+        <a href="home.html" class="back-btn">🏠 Trang Chủ</a>
+    </header>
+
+    <main>
+        <div class="controls">
+            <button onclick="openEmployeeForm()">➕ Thêm Nhân Viên</button>
+            <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm nhân viên..." onkeyup="searchEmployee()">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã NV</th>
+                    <th>Họ Tên</th>
+                    <th>Số Điện Thoại</th>
+                    <th>Chức Vụ</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable">
+                <!-- Dữ liệu nhân viên sẽ được thêm bằng JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Form thêm/sửa nhân viên -->
+   <!-- Form thêm/sửa nhân viên -->
+<!-- Form thêm/sửa nhân viên -->
+<div id="employeeForm" class="modal" onclick="closeEmployeeFormOutside(event)">
+    <div class="modal-content" onclick="event.stopPropagation();">
+        <h2 id="formTitle">Thêm Nhân Viên</h2>
+        <input type="hidden" id="employeeId">
+        <input type="text" id="name" placeholder="Họ và Tên">
+        <input type="text" id="phone" placeholder="Số điện thoại">
+
+        <!-- Chỉnh lại phần Chức vụ -->
+        <label for="position" class="position-label">Chức vụ:</label>
+        <select id="position">
+            <option value="Nhân viên Cắt tóc">Nhân viên Cắt tóc</option>
+            <option value="Nhân viên Gội đầu">Nhân viên Gội đầu</option>
+            <option value="Nhân viên Massage">Nhân viên Massage</option>
+            <option value="Lễ tân">Lễ tân</option>
+            <option value="Quản lý">Quản lý</option>
+        </select>
+
+        <button onclick="saveEmployee()">Lưu</button>
+        <button onclick="closeEmployeeForm()">Hủy</button>
+    </div>
+</div>
+
+
+    <script src="employees.js"></script>
+</body>
+</html>

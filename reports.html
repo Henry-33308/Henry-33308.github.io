@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Doanh Thu & Chi Phí</title>
+    <link rel="stylesheet" href="reports.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script> <!-- Thư viện xuất Excel -->
+</head>
+<body>
+    <header>
+        <h1>Báo Cáo Doanh Thu & Chi Phí</h1>
+        <a href="home.html" class="back-btn">🏠 Trang Chủ</a>
+    </header>
+
+    <main>
+        <h2>📊 Dữ Liệu Báo Cáo</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tháng</th>
+                    <th>Doanh Thu (VNĐ)</th>
+                    <th>Chi Phí (VNĐ)</th>
+                    <th>Lợi Nhuận (VNĐ)</th>
+                </tr>
+            </thead>
+            <tbody id="reportTable">
+                <!-- Dữ liệu báo cáo sẽ được thêm bằng JavaScript -->
+            </tbody>
+        </table>
+
+        <h2>📈 Biểu Đồ Báo Cáo</h2>
+        <canvas id="revenueChart"></canvas>
+        <canvas id="profitChart"></canvas>
+
+        <button onclick="exportToExcel()">📤 Xuất Báo Cáo Excel</button>
+    </main>
+
+    <script src="reports.js"></script>
+</body>
+</html>

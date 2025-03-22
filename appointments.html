@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Lịch Hẹn</title>
+    <link rel="stylesheet" href="appointments.css">
+</head>
+<body>
+    <header>
+        <h1>Quản Lý Lịch Hẹn</h1>
+        <a href="home.html" class="back-btn">🏠 Trang Chủ</a>
+    </header>
+
+    <main>
+        <div class="controls">
+            <button onclick="openAppointmentForm()">➕ Đặt Lịch Hẹn</button>
+            <input type="date" id="filterDate" onchange="filterAppointments()" placeholder="📅 Chọn ngày xem lịch">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã Lịch Hẹn</th>
+                    <th>Khách Hàng</th>
+                    <th>Nhân Viên</th>
+                    <th>Dịch Vụ</th>
+                    <th>Ngày Giờ</th>
+                    <th>Trạng Thái</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody id="appointmentTable">
+                <!-- Dữ liệu lịch hẹn sẽ được thêm bằng JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Form đặt lịch hẹn -->
+    <div id="appointmentForm" class="modal">
+        <div class="modal-content">
+            <h2 id="formTitle">Đặt Lịch Hẹn</h2>
+            <input type="hidden" id="appointmentId">
+            
+            <label for="customer">Khách Hàng:</label>
+            <input type="text" id="customer" placeholder="Nhập tên khách hàng">
+
+
+            <label for="employee">Nhân Viên:</label>
+            <select id="employee"></select>
+
+            <label for="service">Dịch Vụ:</label>
+            <select id="service"></select>
+
+            <label for="dateTime">Ngày Giờ:</label>
+            <input type="datetime-local" id="dateTime">
+
+            <label for="status">Trạng Thái:</label>
+            <select id="status">
+                <option value="Đã đặt">Đã đặt</option>
+                <option value="Đã hủy">Đã hủy</option>
+                <option value="Hoàn thành">Hoàn thành</option>
+            </select>
+
+            <button onclick="saveAppointment()">Lưu</button>
+            <button onclick="closeAppointmentForm()">Hủy</button>
+        </div>
+    </div>
+
+    <script src="appointments.js"></script>
+</body>
+</html>

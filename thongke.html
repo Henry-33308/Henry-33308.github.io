@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống Kê Khách Hàng</title>
+    <link rel="stylesheet" href="thongke.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Thư viện vẽ biểu đồ -->
+</head>
+<body>
+    <header>
+        <h1>Thống Kê Khách Hàng</h1>
+        <a href="home.html" class="back-btn">🏠 Trang Chủ</a>
+    </header>
+
+    <main>
+        <h2>📊 Dữ Liệu Thống Kê</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dịch Vụ</th>
+                    <th>Số Lượng Khách Hàng</th>
+                    <th>Doanh Thu (VNĐ)</th>
+                </tr>
+            </thead>
+            <tbody id="statsTable">
+                <!-- Dữ liệu thống kê sẽ được thêm bằng JavaScript -->
+            </tbody>
+        </table>
+
+        <h2>📈 Biểu Đồ Thống Kê</h2>
+        <canvas id="serviceChart"></canvas>
+        <canvas id="revenueChart"></canvas>
+    </main>
+
+    <script src="thongke.js"></script>
+</body>
+</html>

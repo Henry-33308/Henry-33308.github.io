@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Dịch Vụ</title>
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+    <header>
+        <h1>Quản Lý Dịch Vụ</h1>
+        <a href="home.html" class="back-btn">🏠 Trang Chủ</a>
+    </header>
+
+    <main>
+        <div class="controls">
+            <button onclick="openServiceForm()">➕ Thêm Dịch Vụ</button>
+            <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm dịch vụ..." onkeyup="searchService()">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã DV</th>
+                    <th>Tên Dịch Vụ</th>
+                    <th>Giá (VNĐ)</th>
+                    <th>Mô Tả</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody id="serviceTable">
+                <!-- Dữ liệu dịch vụ sẽ được thêm bằng JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Form thêm/sửa dịch vụ -->
+   <!-- Form thêm/sửa dịch vụ -->
+<div id="serviceForm" class="modal">
+    <div class="modal-content">
+        <h2 id="formTitle">Thêm Dịch Vụ</h2>
+        <input type="hidden" id="serviceId">
+        
+        <!-- Danh sách chọn dịch vụ -->
+        <label for="name">Tên dịch vụ:</label>
+        <select id="name" onchange="updatePrice()">
+            <option value="">Chọn dịch vụ...</option>
+            <option value="Cắt tóc nam" data-price="100000">Cắt tóc nam</option>
+            <option value="Cắt tóc nữ" data-price="150000">Cắt tóc nữ</option>
+            <option value="Nhuộm tóc" data-price="300000">Nhuộm tóc</option>
+            <option value="Uốn tóc" data-price="400000">Uốn tóc</option>
+            <option value="Dưỡng tóc" data-price="250000">Dưỡng tóc</option>
+        </select>
+
+        <!-- Nhập giá dịch vụ -->
+        <label for="price">Giá dịch vụ (VNĐ):</label>
+        <input type="number" id="price" placeholder="Nhập giá dịch vụ">
+
+        <label for="description">Mô tả dịch vụ:</label>
+        <textarea id="description" placeholder="Mô tả dịch vụ"></textarea>
+        
+        <button onclick="saveService()">Lưu</button>
+        <button onclick="closeServiceForm()">Hủy</button>
+    </div>
+</div>
+
+
+    <script src="services.js"></script>
+</body>
+</html>

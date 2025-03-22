@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Thanh Toán</title>
+    <link rel="stylesheet" href="payments.css">
+</head>
+<body>
+    <header>
+        <h1>Quản Lý Thanh Toán</h1>
+        <a href="home.html" class="back-btn">🏠 Trang Chủ</a>
+    </header>
+
+    <main>
+        <div class="controls">
+            <button onclick="openPaymentForm()">💳 Thanh Toán</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã Hóa Đơn</th>
+                    <th>Khách Hàng</th>
+                    <th>Dịch Vụ</th>
+                    <th>Thành Tiền (VNĐ)</th>
+                    <th>Phương Thức</th>
+                    <th>Ngày Thanh Toán</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody id="paymentTable">
+                <!-- Dữ liệu thanh toán sẽ được thêm bằng JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Form thanh toán -->
+    <div id="paymentForm" class="modal">
+        <div class="modal-content">
+            <h2 id="formTitle">Thanh Toán Dịch Vụ</h2>
+            <input type="hidden" id="paymentId">
+            
+            <label for="customer">Khách Hàng:</label>
+            <select id="customer"></select>
+
+            <label for="service">Dịch Vụ:</label>
+            <select id="service" onchange="updatePrice()"></select>
+
+            <label for="amount">Số Tiền (VNĐ):</label>
+            <input type="number" id="amount" readonly>
+
+            <label for="paymentMethod">Phương Thức Thanh Toán:</label>
+            <select id="paymentMethod">
+                <option value="Tiền mặt">Tiền mặt</option>
+                <option value="Chuyển khoản QR">Chuyển khoản QR</option>
+            </select>
+
+            <button onclick="processPayment()">Xác Nhận</button>
+            <button onclick="closePaymentForm()">Hủy</button>
+        </div>
+    </div>
+
+    <!-- Hóa đơn -->
+    <div id="invoice" class="modal">
+        <div class="modal-content">
+            <h2>Hóa Đơn Thanh Toán</h2>
+            <p><strong>Khách Hàng:</strong> <span id="invoiceCustomer"></span></p>
+            <p><strong>Dịch Vụ:</strong> <span id="invoiceService"></span></p>
+            <p><strong>Thành Tiền:</strong> <span id="invoiceAmount"></span> VNĐ</p>
+            <p><strong>Phương Thức:</strong> <span id="invoiceMethod"></span></p>
+            <p><strong>Ngày Thanh Toán:</strong> <span id="invoiceDate"></span></p>
+            <button onclick="printInvoice()">🖨 In Hóa Đơn</button>
+            <button onclick="closeInvoice()">Đóng</button>
+        </div>
+    </div>
+
+    <script src="payments.js"></script>
+</body>
+</html>

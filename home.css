@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+header {
+    background: #222;
+    padding: 20px;
+    font-size: 28px;
+    color: white;
+}
+
+/* Menu điều hướng ngang */
+nav {
+    background: #333;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: #0056b3;
+}
+
+.logout {
+    background: red !important;
+}
+
+.logout:hover {
+    background: darkred !important;
+}
+
+/* Thư viện ảnh */
+.gallery {
+    padding: 20px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.image-grid img:hover {
+    transform: scale(1.1);
+}
+.logout {
+    background: red !important;
+}
+
+.logout:hover {
+    background: darkred !important;
+}

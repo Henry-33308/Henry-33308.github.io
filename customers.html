@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Khách Hàng</title>
+    <link rel="stylesheet" href="customers.css">
+</head>
+<body>
+    <header>
+        <h1>Quản Lý Khách Hàng</h1>
+        <a href="home.html" class="back-btn">🏠 Trang Chủ</a>
+    </header>
+
+    <main>
+        <div class="controls">
+            <button onclick="openCustomerForm()">➕ Thêm Khách Hàng</button>
+            <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm khách hàng..." onkeyup="searchCustomer()">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã KH</th>
+                    <th>Họ Tên</th>
+                    <th>Số Điện Thoại</th>
+                    <th>Lịch Sử Dịch Vụ</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody id="customerTable">
+                <!-- Dữ liệu khách hàng sẽ được thêm bằng JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Form thêm/sửa khách hàng -->
+    <div id="customerForm" class="modal">
+        <div class="modal-content">
+            <h2 id="formTitle">Thêm Khách Hàng</h2>
+            <input type="hidden" id="customerId">
+            <input type="text" id="name" placeholder="Họ và Tên">
+            <input type="text" id="phone" placeholder="Số điện thoại">
+            
+            <label for="history">Lịch sử dịch vụ:</label>
+            <select id="history">
+                <option value="">Chọn dịch vụ...</option>
+                <option value="Cắt tóc">Cắt tóc</option>
+                <option value="Gội đầu">Gội đầu</option>
+                <option value="Nhuộm tóc">Nhuộm tóc</option>
+                <option value="Uốn tóc">Uốn tóc</option>
+                <option value="Tẩy tế bào chết">Tẩy tế bào chết</option>
+                <option value="Dưỡng tóc">Dưỡng tóc</option>
+                <option value="Massage">Massage</option>
+                <option value="Làm móng">Làm móng</option>
+                <option value="Chăm sóc da">Chăm sóc da</option>
+            </select>
+            
+            <button onclick="saveCustomer()">Lưu</button>
+            <button onclick="closeCustomerForm()">Hủy</button>
+        </div>
+    </div>
+
+    <script src="customers.js"></script>
+</body>
+</html>
