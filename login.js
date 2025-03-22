@@ -7,7 +7,7 @@ function login() {
         message.style.color = "green";
         message.textContent = "✅ Đăng nhập thành công!";
         setTimeout(() => {
-            window.location.href = "home.html"; // Chuyển hướng đến trang chính
+            window.location.href = "index.html"; // Chuyển hướng đến trang chính
         }, 1000);
     } else {
         message.style.color = "red";
